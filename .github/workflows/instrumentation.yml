@@ -1,0 +1,30 @@
+name: Instrumentation tests
+on:
+  push:
+    paths:
+      - 'test/**'
+jobs:
+    lint:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v5
+          with:
+            python-version: '3.12'
+        - run: pip install ruff
+        - run: |
+            ruff check test/
+            ruff format --check test/
+    tests:
+      strategy:
+        matrix:
+          test: [sdk, openai, genai, anthropic]
+          language: [python, nodejs, java]
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v5
+          with:
+            python-version: '3.12'
+        - run: pip install -r test/requirements.txt
+        - run: TEST_LIBS=${{ matrix.language }} pytest test/test_${{ matrix.test }}.py
