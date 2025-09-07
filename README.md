@@ -81,3 +81,35 @@ When you're done with the tutorials, deactivate your virtualenv and return to yo
 ```bash
 deactivate
 ```
+
+## Upgrade openai, ddtrace python package and run
+
+```
+pip3 install --upgrade openai
+pip3 install --upgrade ddtrace
+python3 1-llm-span.py
+```
+
+## Convert .ipynb file to .py file
+
+When you're ready to run .py file, you can do the convertion:
+
+```
+jupyter nbconvert --to script your_notebook.ipynb
+```
+
+## Upgrade pip3 for 4-custom-evaluations
+
+Before pip3 install llama-index=="0.10.42" --quiet, upgrade pip3 if required:
+
+```
+pip3 install llama-index=="0.10.42" --quiet
+```
+
+Install RAGAS v0.1.21 and remove context_relevancy metrics:
+
+```
+pip3 install ragas==0.1.21
+```
+
+Remove context_relevancy metrics
