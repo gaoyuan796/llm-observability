@@ -98,18 +98,15 @@ When you're ready to run .py file, you can do the convertion:
 jupyter nbconvert --to script your_notebook.ipynb
 ```
 
-## Upgrade pip3 for 4-custom-evaluations
+## For 4-custom-evaluations
 
-Before pip3 install llama-index=="0.10.42" --quiet, upgrade pip3 if required:
-
-```
-pip3 install llama-index=="0.10.42" --quiet
-```
-
-Install RAGAS v0.1.21 and remove context_relevancy metrics:
+Upgrade to python3.12
 
 ```
+pip3 install --upgrade pip
+pip3 install llama-index=="0.10.42"
 pip3 install ragas==0.1.21
+pip3 install ipywidgets
 ```
 
 Remove context_relevancy metrics
