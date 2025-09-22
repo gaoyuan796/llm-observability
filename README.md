@@ -110,3 +110,15 @@ pip3 install ipywidgets
 ```
 
 Remove context_relevancy metrics
+
+## myenv2 to save vector into mariadb
+
+```
+pip3 install "llama-index-core>=0.14.2"
+pip3 install llama-index-vector-stores-mariadb
+pip3 install llama-index-llms-openai
+pip3 install python-dotenv
+pip3 install ddtrace
+pip3 install llama-index-embeddings-openai
+pip3 install ragas==0.1.21
+```
