@@ -122,3 +122,4 @@ pip3 install ddtrace
 pip3 install llama-index-embeddings-openai
 pip3 install ragas==0.1.21
 ```
+Remove llama_index table before run python script to prevent dup vectors
